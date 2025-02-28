@@ -1,6 +1,20 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+</style>
 <div class="container my-5">
     <h2 class="text-center mb-4">Available Equipment</h2>
     <div class="row">
@@ -10,21 +24,16 @@
                 <img src="~/images/equipment1.jpg" class="card-img-top" alt="Microscope">
                 <div class="card-body">
                     <h5 class="card-title">High-Resolution Microscope</h5>
-                    <p class="card-text">
-                        This advanced high-resolution microscope is designed for precise and detailed observations in laboratory experiments.
-                        It features multiple magnification levels, LED illumination, and an ergonomic design for comfortable use.
-                    </p>
+                    <p class="card-text">This advanced high-resolution microscope is designed for precise and detailed observations in laboratory experiments.</p>
                     <ul class="card-text">
                         <li>Magnification: 40x - 1000x</li>
-                        <li>High-quality optical glass lenses</li>
-                        <li>Adjustable LED lighting for clear visibility</li>
-                        <li>USB connectivity for digital imaging</li>
-                        <li>Ergonomic design for extended use</li>
+                        <li>Availability: 5 units</li>
+                        <li>Currently in use: 3 people</li>
+                        <li>Average Review: 4.7/5</li>
                     </ul>
                     <a href="booking.html" class="btn btn-primary">Book Now</a>
                 </div>
             </div>
-
         </div>
         <!-- Equipment Item 2 -->
         <div class="col-md-4">
@@ -32,7 +41,13 @@
                 <img src="~/images/equipment2.jpg" class="card-img-top" alt="Centrifuge">
                 <div class="card-body">
                     <h5 class="card-title">High-Speed Centrifuge</h5>
-                    <p class="card-text">Perfect for precise sample separation.</p>
+                    <p class="card-text">Ideal for precise and efficient sample separation in laboratory and research applications.</p>
+                    <ul class="card-text">
+                        <li>Maximum Speed: 15,000 RPM</li>
+                        <li>Availability: 3 units</li>
+                        <li>Currently in use: 2 people</li>
+                        <li>Average Review: 4.5/5</li>
+                    </ul>
                     <a href="booking.html" class="btn btn-primary">Book Now</a>
                 </div>
             </div>
@@ -43,7 +58,13 @@
                 <img src="~/images/equipment3.jpg" class="card-img-top" alt="Spectrometer">
                 <div class="card-body">
                     <h5 class="card-title">Advanced Spectrometer</h5>
-                    <p class="card-text">Used for accurate spectral analysis.</p>
+                    <p class="card-text">High-precision spectrometer for accurate spectral analysis in research and industrial applications.</p>
+                    <ul class="card-text">
+                        <li>Wavelength Range: 190 nm - 1100 nm</li>
+                        <li>Availability: 4 units</li>
+                        <li>Currently in use: 2 people</li>
+                        <li>Average Review: 4.6/5</li>
+                    </ul>
                     <a href="booking.html" class="btn btn-primary">Book Now</a>
                 </div>
             </div>
@@ -54,7 +75,13 @@
                 <img src="~/images/equipment4.jpg" class="card-img-top" alt="Oscilloscope">
                 <div class="card-body">
                     <h5 class="card-title">Digital Oscilloscope</h5>
-                    <p class="card-text">Used for analyzing electrical signals.</p>
+                    <p class="card-text">Designed for accurate analysis of electrical signals in engineering and research applications.</p>
+                    <ul class="card-text">
+                        <li>Bandwidth: 100 MHz - 500 MHz</li>
+                        <li>Availability: 6 units</li>
+                        <li>Currently in use: 4 people</li>
+                        <li>Average Review: 4.8/5</li>
+                    </ul>
                     <a href="booking.html" class="btn btn-primary">Book Now</a>
                 </div>
             </div>
@@ -64,8 +91,14 @@
             <div class="card">
                 <img src="~/images/equipment5.jpg" class="card-img-top" alt="3D Printer">
                 <div class="card-body">
-                    <h5 class="card-title">3D Printer</h5>
-                    <p class="card-text">Used for rapid prototyping and model making.</p>
+                    <h5 class="card-title">High-Precision 3D Printer</h5>
+                    <p class="card-text">Ideal for rapid prototyping and detailed model making with multiple material compatibility.</p>
+                    <ul class="card-text">
+                        <li>Build Volume: 250 x 250 x 300 mm</li>
+                        <li>Availability: 2 units</li>
+                        <li>Currently in use: 1 person</li>
+                        <li>Average Review: 4.4/5</li>
+                    </ul>
                     <a href="booking.html" class="btn btn-primary">Book Now</a>
                 </div>
             </div>
@@ -76,7 +109,13 @@
                 <img src="~/images/equipment6.jpg" class="card-img-top" alt="Tensile Testing Machine">
                 <div class="card-body">
                     <h5 class="card-title">Tensile Testing Machine</h5>
-                    <p class="card-text">For testing material strength and elasticity.</p>
+                    <p class="card-text">Used for evaluating the strength, elasticity, and mechanical properties of various materials.</p>
+                    <ul class="card-text">
+                        <li>Maximum Load Capacity: 50 kN</li>
+                        <li>Availability: 3 units</li>
+                        <li>Currently in use: 1 person</li>
+                        <li>Average Review: 4.5/5</li>
+                    </ul>
                     <a href="booking.html" class="btn btn-primary">Book Now</a>
                 </div>
             </div>
@@ -86,8 +125,14 @@
             <div class="card">
                 <img src="~/images/equipment7.jpg" class="card-img-top" alt="Soldering Station">
                 <div class="card-body">
-                    <h5 class="card-title">Soldering Station</h5>
-                    <p class="card-text">Essential for assembling electronic circuits.</p>
+                    <h5 class="card-title">Professional Soldering Station</h5>
+                    <p class="card-text">Essential for assembling, repairing, and prototyping electronic circuits.</p>
+                    <ul class="card-text">
+                        <li>Adjustable Temperature Range: 200°C - 480°C</li>
+                        <li>Availability: 4 units</li>
+                        <li>Currently in use: 2 people</li>
+                        <li>Average Review: 4.6/5</li>
+                    </ul>
                     <a href="booking.html" class="btn btn-primary">Book Now</a>
                 </div>
             </div>
@@ -97,8 +142,14 @@
             <div class="card">
                 <img src="~/images/equipment8.jpg" class="card-img-top" alt="Function Generator">
                 <div class="card-body">
-                    <h5 class="card-title">Function Generator</h5>
-                    <p class="card-text">For generating electrical waveforms.</p>
+                    <h5 class="card-title">Digital Function Generator</h5>
+                    <p class="card-text">Used for generating various electrical waveforms for circuit testing and research.</p>
+                    <ul class="card-text">
+                        <li>Frequency Range: 1 Hz - 20 MHz</li>
+                        <li>Availability: 5 units</li>
+                        <li>Currently in use: 3 people</li>
+                        <li>Average Review: 4.7/5</li>
+                    </ul>
                     <a href="booking.html" class="btn btn-primary">Book Now</a>
                 </div>
             </div>
@@ -109,7 +160,13 @@
                 <img src="~/images/equipment9.jpg" class="card-img-top" alt="Hot Plate">
                 <div class="card-body">
                     <h5 class="card-title">Hot Plate with Magnetic Stirrer</h5>
-                    <p class="card-text">For heating and stirring chemical solutions.</p>
+                    <p class="card-text">Ideal for heating and mixing chemical solutions with precision.</p>
+                    <ul class="card-text">
+                        <li>Heating Temperature Range: Up to 350°C</li>
+                        <li>Availability: 3 units</li>
+                        <li>Currently in use: 2 people</li>
+                        <li>Average Review: 4.5/5</li>
+                    </ul>
                     <a href="booking.html" class="btn btn-primary">Book Now</a>
                 </div>
             </div>

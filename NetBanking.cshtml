@@ -1,0 +1,79 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .netbanking-container {
+        max-width: 500px;
+        margin: 50px auto;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .netbanking-header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+        .netbanking-header h2 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+    .bank-list {
+        list-style: none;
+        padding: 0;
+    }
+
+        .bank-list li {
+            background: #f8f9fa;
+            padding: 12px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            .bank-list li:hover {
+                background: #007bff;
+                color: white;
+            }
+
+    .pay-btn {
+        background: #28a745;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 12px;
+        border-radius: 5px;
+        border: none;
+        width: 100%;
+        transition: 0.3s;
+    }
+
+        .pay-btn:hover {
+            background: #218838;
+        }
+</style>
+
+<div class="container netbanking-container">
+    <div class="netbanking-header">
+        <h2>Net Banking Payment</h2>
+    </div>
+    <form action="/Payment/ProcessNetBanking" method="POST">
+        <h4>Select Your Bank</h4>
+        <ul class="bank-list">
+            <li><input type="radio" name="bank" value="SBI" required> State Bank of India</li>
+            <li><input type="radio" name="bank" value="HDFC"> HDFC Bank</li>
+            <li><input type="radio" name="bank" value="ICICI"> ICICI Bank</li>
+            <li><input type="radio" name="bank" value="Axis"> Axis Bank</li>
+            <li><input type="radio" name="bank" value="Punjab"> Punjab National Bank</li>
+            <li><input type="radio" name="bank" value="BOB"> Bank of Baroda</li>
+            <li><input type="radio" name="bank" value="Kotak"> Kotak Mahindra Bank</li>
+        </ul>
+        <button type="submit" class="pay-btn">Proceed to Pay</button>
+    </form>
+</div>

@@ -1,0 +1,88 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .upi-container {
+        max-width: 450px;
+        margin: 50px auto;
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .upi-header h2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .upi-methods img {
+        width: 80px;
+        margin: 10px;
+    }
+
+    .qr-code {
+        margin: 20px 0;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .form-control {
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .pay-btn {
+        background: #28a745;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 12px;
+        border-radius: 5px;
+        border: none;
+        width: 100%;
+        transition: 0.3s;
+    }
+
+        .pay-btn:hover {
+            background: #218838;
+        }
+</style>
+
+<div class="container upi-container">
+    <div class="upi-header">
+        <h2>UPI Payment</h2>
+    </div>
+
+    <div class="upi-methods">
+        <img src="/images/googlepay.png" alt="Google Pay">
+        <img src="/images/phonepe.png" alt="PhonePe">
+        <img src="/images/paytm.png" alt="Paytm">
+    </div>
+
+    <div class="qr-code">
+        <img src="/images/qr-code.png" alt="Scan QR Code" width="200">
+        <p>Scan the QR code or enter your UPI ID below</p>
+    </div>
+
+    <form action="/Payment/ProcessUPI" method="POST">
+        <div class="form-group">
+            <label for="upiID">Enter UPI ID</label>
+            <input type="text" class="form-control" id="upiID" name="upiID" placeholder="example@upi" required>
+        </div>
+        <button type="submit" class="pay-btn">Pay Now</button>
+    </form>
+</div>

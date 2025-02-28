@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <!-- Contact Information -->
+    <div class="col-md-6">
+        <h4>Lab Address</h4>
+        <p>Rourkela</p>
+        <h4>Email</h4>
+        <p><a href="mailto:abhinashp56@gmail.com">abhinashp56@gmail.com</a></p>
+        <h4>Phone</h4>
+        <p><a href="tel:+91 82492972928">+91 82492972928</a></p>
+        <h4>Live Chat</h4>
+        <p>Chat support available during business hours.</p>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="col-md-6">
+        <h4>Send Us a Message</h4>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Your Email</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea class="form-control" id="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+    </div>
+</div>

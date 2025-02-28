@@ -1,0 +1,112 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+    }
+
+    .hero-section {
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        background-color: #007bff;
+    }
+
+    .icon {
+        font-size: 40px;
+        color: #007bff;
+    }
+
+    .feature-card {
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-radius: 10px;
+    }
+
+        .feature-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+</style>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="hero-content">
+        <h1>Welcome to Our Lab Management Platform</h1>
+        <p>Enhancing research efficiency through cutting-edge technology</p>
+    </div>
+</div>
+
+<!-- About Section -->
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h2 class="text-dark">Why Choose Us?</h2>
+        <p class="text-muted">We provide a next-level solution for laboratory management, optimizing efficiency and innovation.</p>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="card feature-card p-4 shadow-sm">
+                <i class="icon fas fa-calendar-check"></i>
+                <h5 class="mt-3">Smart Scheduling</h5>
+                <p class="text-muted">Book lab equipment instantly with AI-powered scheduling and real-time updates.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card feature-card p-4 shadow-sm">
+                <i class="icon fas fa-lock"></i>
+                <h5 class="mt-3">Secure Transactions</h5>
+                <p class="text-muted">Multiple payment options and encrypted transactions for complete security.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card feature-card p-4 shadow-sm">
+                <i class="icon fas fa-users"></i>
+                <h5 class="mt-3">User Access Control</h5>
+                <p class="text-muted">Manage roles and permissions to ensure lab safety and efficiency.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Additional Features Section -->
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="card feature-card p-4 shadow-sm">
+                <i class="icon fas fa-bell"></i>
+                <h5 class="mt-3">Instant Alerts</h5>
+                <p class="text-muted">Stay informed with real-time notifications for bookings and lab updates.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card feature-card p-4 shadow-sm">
+                <i class="icon fas fa-chart-line"></i>
+                <h5 class="mt-3">Data Analytics</h5>
+                <p class="text-muted">Advanced reporting and analytics to optimize lab resource utilization.</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card feature-card p-4 shadow-sm">
+                <i class="icon fas fa-tools"></i>
+                <h5 class="mt-3">Innovative Research Tools</h5>
+                <p class="text-muted">Leverage state-of-the-art laboratory resources for breakthrough research.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Our Mission -->
+<div class="py-5 bg-light">
+    <div class="container text-center">
+        <h2 class="text-dark">Our Mission</h2>
+        <p class="text-muted">Empowering researchers with seamless lab management solutions, so they can focus on discoveries that change the world.</p>
+    </div>
+</div>

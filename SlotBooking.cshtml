@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container mt-5">
+    <h2 class="text-center">Book a Slot</h2>
+    <form id="bookingForm" class="p-4 border rounded shadow-sm bg-light">
+
+        <!-- Equipment Selection -->
+        <div class="mb-3">
+            <label for="equipment" class="form-label">Select Equipment</label>
+            <select class="form-select" id="equipment" required>
+                <option value="">Choose...</option>
+                <option value="Microscope">Microscope</option>
+                <option value="Centrifuge">Centrifuge</option>
+                <option value="Spectrophotometer">Spectrophotometer</option>
+            </select>
+        </div>
+
+        <!-- Date Selection -->
+        <div class="mb-3">
+            <label for="date" class="form-label">Select Date</label>
+            <input type="date" class="form-control" id="date" required>
+        </div>
+
+        <!-- Time Slot Selection -->
+        <div class="mb-3">
+            <label for="time" class="form-label">Select Time Slot</label>
+            <select class="form-select" id="time" required>
+                <option value="">Choose...</option>
+                <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
+                <option value="11:00 AM - 12:00 PM">11:00 AM - 12:00 PM</option>
+                <option value="12:00 AM - 13:00 AM">12:00 AM - 13:00 AM</option>
+                <option value="13:00 AM - 14:00 AM">13:00 AM - 14:00 AM</option>
+                <option value="14:00 AM - 15:00 AM">14:00 AM - 15:00 AM</option>
+                <option value="15:00 AM - 16:00 AM">15:00 AM - 16:00 AM</option>
+                <option value="16:00 AM - 17:00 AM">16:00 AM - 17:00 AM</option>
+            </select>
+        </div>
+
+        <!-- Payment Option -->
+        <div class="mb-3">
+            <label for="payment" class="form-label">Payment Method</label>
+            <select class="form-select" id="payment" required>
+                <option value="">Choose...</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Debit Card">Debit Card</option>
+                <option value="UPI">UPI</option>
+                <option value="Net Banking">Net Banking</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Book Now</button>
+    </form>
+
+    <!-- Confirmation Message -->
+    <div id="confirmation" class="alert alert-success mt-3 d-none">
+        Booking confirmed! You will receive an email shortly.
+    </div>
+</div>
+
+<script>
+    document.getElementById("bookingForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        document.getElementById("confirmation").classList.remove("d-none");
+        setTimeout(() => {
+            window.location.href = "confirmation.html"; // Redirect if needed
+        }, 2000);
+    });
+</script>

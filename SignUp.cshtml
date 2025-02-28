@@ -1,0 +1,85 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var GenderList = new List<SelectListItem>
+    {
+        new SelectListItem { Text = "Male", Value="M" },
+        new SelectListItem {Text = "Female", Value="F"}
+    };
+}
+
+<div id="signin" class="py-5" style="background-image: url('background.jpg'); background-size: cover; background-position: center;">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="bg-white p-5 rounded shadow-lg opacity-90">
+                    <h2 class="text-center mb-4">Sign Up</h2>
+                    <form id="signinForm">
+                        @model EMS.Models.Signup
+
+                        @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
+                        {
+                            <div class="form-group">
+                                @Html.Label("Name")
+                                @Html.TextBox("Name", null, new { @class = "form-control", placeholder = "Enter your Name" })
+                                @Html.ValidationMessageFor(a => a.Name, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Username)
+                                @Html.TextBoxFor(model => model.Username, new { @class = "form-control", placeholder = "Enter your Username" })
+                                @Html.ValidationMessageFor(model => model.Username, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="mb-3">
+                                @Html.Label("Email", "Email", new { @class = "form-label" })
+                                @Html.TextBox("Email", null, new { @class = "form-control", @type = "email", placeholder = "Enter your Email" })
+                                @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="mb-3">
+                                @Html.Label("Gender", "Gender", new { @class = "form-label" })
+                                @Html.DropDownList("Gender", new List<SelectListItem>
+                            {
+                            new SelectListItem { Text = "Select Gender", Value = "" },
+                            new SelectListItem { Text = "Male", Value = "male" },
+                            new SelectListItem { Text = "Female", Value = "female" },
+                            new SelectListItem { Text = "Other", Value = "other" }
+                            }, new { @class = "form-select", id = "gender" })
+                                @Html.ValidationMessageFor(model => model.Gender, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group mb-3">
+                                @Html.LabelFor(model => model.Password)
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Enter your Password" })
+                                @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="mb-3">
+                                @Html.Label("PhoneNumber", "Phone Number", new { @class = "form-label" })
+                                @Html.TextBox("PhoneNumber", null, new { @class = "form-control", @type = "tel", placeholder = "Enter your phone number", pattern = "[0-9]{10}", title = "Enter a valid 10-digit phone number" })
+                                @Html.ValidationMessageFor(model => model.PhoneNumber, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="mb-3">
+                                @Html.Label("Age", "Age", new { @class = "form-label" })
+                                @Html.TextBox("Age", null, new { @class = "form-control", @type = "number", placeholder = "Enter your Age", title = "Enter a valid age" })
+                                @Html.ValidationMessageFor(model => model.Age, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="mb-3">
+                                @Html.Label("Address", "Address", new { @class = "form-label" })
+                                @Html.TextArea("Address", null, new { @class = "form-control", placeholder = "Enter your Address" })
+                                @Html.ValidationMessageFor(model => model.Address, null, new { @class = "text-danger" })
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+                            </div>
+                        }
+                    </form>
+                   
+                    <div class="text-center mt-3">
+                        <a class="btn">
+                            Already Have An Account 
+                            @Html.ActionLink("Sign In", "Login", "Home", null, new { @class = "link" })
+                        </a>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
