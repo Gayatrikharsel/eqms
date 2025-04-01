@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Master</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Slot Master</h2>
+    <label for="duration">Select Duration:</label>
+    <select id="duration">
+        <option value="30">30 Min</option>
+        <option value="60">60 Min</option>
+        <option value="90">90 Min</option>
+    </select>
+
+    <br>
+    <br>
+    <label for="startTime">Start Time:</label>
+    <input type="time" id="startTime">
+
+    <label for="endTime">End Time:</label>
+    <input type="time" id="endTime">
+
+    <button onclick="addSlot()">Add Slot</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Duration</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+            </tr>
+        </thead>
+        <tbody id="slotTableBody">
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", loadSlots);
+
+        function addSlot() {
+            var duration = document.getElementById("duration").value;
+            var startTime = document.getElementById("startTime").value;
+            var endTime = document.getElementById("endTime").value;
+
+            if (startTime && endTime) {
+                var slot = { duration, startTime, endTime };
+                var slots = JSON.parse(localStorage.getItem("slots")) || [];
+                slots.push(slot);
+                localStorage.setItem("slots", JSON.stringify(slots));
+
+                insertRow(slot, slots.length - 1);
+                document.getElementById("startTime").value = "";
+                document.getElementById("endTime").value = "";
+            } else {
+                alert("Please enter both start and end times.");
+            }
+        }
+
+        function loadSlots() {
+            var slots = JSON.parse(localStorage.getItem("slots")) || [];
+            slots.forEach((slot, index) => insertRow(slot, index));
+        }
+
+        function insertRow(slot, index) {
+            var tableBody = document.getElementById("slotTableBody");
+            var row = tableBody.insertRow();
+            row.setAttribute("data-index", index);
+
+            row.insertCell(0).textContent = slot.duration + " Min";
+            row.insertCell(1).textContent = slot.startTime;
+            row.insertCell(2).textContent = slot.endTime;
+
+            var actionsCell = row.insertCell(3);
+            actionsCell.innerHTML = `
+                <button onclick="editSlot(${index})">Edit</button>
+                <button onclick="deleteSlot(${index})">Delete</button>
+            `;
+        }
+
+        function editSlot(index) {
+            var slots = JSON.parse(localStorage.getItem("slots")) || [];
+            var slot = slots[index];
+
+            document.getElementById("duration").value = slot.duration;
+            document.getElementById("startTime").value = slot.startTime;
+            document.getElementById("endTime").value = slot.endTime;
+
+            deleteSlot(index, false); // Remove from table but keep data in localStorage for editing
+        }
+
+        function deleteSlot(index, remove = true) {
+            var slots = JSON.parse(localStorage.getItem("slots")) || [];
+            slots.splice(index, 1);
+            localStorage.setItem("slots", JSON.stringify(slots));
+
+            if (remove) {
+                document.getElementById("slotTableBody").innerHTML = "";
+                loadSlots(); // Reload updated data
+            }
+        }
+    </script>
+
+
+</body>
+</html>
